@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Menu from '../components/Menu'
+import Searchbar from '../components/Searchbar'
 
 export default function App ( props ) {
   return (
@@ -10,15 +11,7 @@ export default function App ( props ) {
           <Menu />
         </div>
         <div className="main">
-          <div className="searchbar">
-            <div className="searchbar--icon">
-              <span> &lsaquo; </span>
-              <span> &rsaquo; </span>
-            </div>
-            <div className="searchbar--input">input</div>
-            <div className="searchbar--middle">middle</div>
-            <div className="searchbar--user">user</div>
-          </div>
+          <Searchbar />
           {props.children}
         </div>
         <div className="side-left"></div>
