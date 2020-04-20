@@ -31,11 +31,115 @@ body {
   height: 89vh;
 }
 
-.footer {
+.playing-zone {
   grid-area: footer;
   background-color: var(--soft-grey);
   height: 11vh;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  justify-content: space-around;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
+.playing-zone .playing-zone--thumbnail,
+.playing-zone .playing-zone--control,
+.playing-zone .playing-zone--actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playing-zone .playing-zone--thumbnail {
+  /* background-color: red; */
+}
+
+.playing-zone .playing-zone--thumbnail .thumbnail {
+  /* background-color: green; */
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.playing-zone .playing-zone--control {
+  flex-direction: column;
+}
+
+.playing-zone .playing-zone--control .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 50%;
+  font-size: 1.1em;
+  color: var(--light-grey);
+}
+
+.playing-zone .playing-zone--control .buttons span:hover {
+  color: var(--white);
+}
+
+.playing-zone .playing-zone--control .buttons .disabled {
+  color: var(--soft-grey-2) !important;
+}
+
+.playing-zone .playing-zone--control .buttons .play {
+  font-size: 1.5em;
+}
+
+.playing-zone .playing-zone--control .buttons .shuffle.active,
+.playing-zone .playing-zone--control .buttons .repeat.active {
+  color: var(--default-green);
+  position: relative;
+}
+
+.playing-zone .playing-zone--control .buttons .repeat.active::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 5px;
+  height: 5px;
+  background-color: var(--default-green);
+  border-radius: 50%;
+}
+
+.playing-zone .playing-zone--control .buttons .repeat .label-repeat {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  font-size: 7px;
+  padding: 1px 4px;
+  border-radius: 50%;
+  background-color: var(--default-green);
+  color: var(--black);
+}
+
+.playing-zone .playing-zone--control .progress-bar {
+  background-color: var(--soft-grey-2);
+  width: 70%;
+  height: 5px;
+  border-radius: 50px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.playing-zone .playing-zone--control .progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: var(--default-green);
+}
+
+.playing-zone .playing-zone--actions {
+  background-color: purple;
+}
+
 .main {
   grid-area: main;
   background-color: var(--grey);
@@ -44,10 +148,38 @@ body {
   position: relative;
   padding: 50px 20px 30px;
   box-sizing: border-box;
+  color: var(--white);
 }
 .side-left {
   grid-area: side;
   background-color: var(--darkest-grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+}
+
+.side-left p {
+  font-weight: bold;
+  margin-bottom: 20%;
+}
+
+.side-left button {
+  border: 1px solid var(--white);
+  background-color: transparent;
+  padding: 10px 0;
+  width: 70%;
+  color: var(--white);
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+
+.side-left button:hover {
+  transform: scale(1.1);
 }
 
 .container {
