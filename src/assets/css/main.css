@@ -1,17 +1,5 @@
-:root {
-  --default-green: #1db954;
-  --default-green-light: #1cd85e;
-  --black: #000000;
-  --grey: #181818;
-  --darkest-grey: #121212;
-  --soft-grey: #282828;
-  --soft-grey-2: #404040;
-  --light-grey: #b3b3b3;
-  --grey-white: #b9b9b9;
-  --white: #fff;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;800&display=swap');
+@import url('./colors.css');
 @import url('./utils.css');
 
 body {
@@ -170,9 +158,13 @@ body {
   right: 5px;
   top: -15%;
   border-radius: 50px;
+  display: flex;
 }
 .playing-zone .playing-zone--actions .volume .volume--bar input[type='range'] {
   z-index: 5;
+  margin-top: 15px;
+  width: 100%;
+  display: block;
 }
 
 .playing-zone .playing-zone--actions .volume .volume--bar .volume-range {

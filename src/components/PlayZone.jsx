@@ -20,7 +20,7 @@ export default function PlayZone ( props ) {
     volumeLevel < 51 ? <i className="las la-volume-down"></i>
       : <i className="las la-volume-up"></i>
 
-  const toogleFullscreen = () => {
+  const requestFullscreen = () => {
     // - FIXME - exitFullscreen não está funcionando
     if ( document.documentElement.requestFullscreen ) {
       document.documentElement.requestFullscreen()
@@ -31,8 +31,10 @@ export default function PlayZone ( props ) {
     } else if ( document.documentElement.msRequestFullscreen ) { /* IE/Edge */
       document.documentElement.msRequestFullscreen()
     }
+  }
 
-    else if ( document.exitFullscreen ) {
+  const exitFullscreen = () => {
+    if ( document.exitFullscreen ) {
       document.exitFullscreen()
     } else if ( document.mozCancelFullScreen ) { /* Firefox */
       document.mozCancelFullScreen()
@@ -113,7 +115,7 @@ export default function PlayZone ( props ) {
           <span className="forward disabled"><i className="las la-step-forward"></i></span>
           <span className={ repeat ? 'repeat active' : 'repeat' } onClick={ changeRepeat }>
             { labelRepeat }
-            <i className="las la-redo-alt"></i>
+            <i className="las la-sync"></i>
           </span>
         </div>
         <div className="progress-bar">
@@ -150,12 +152,15 @@ export default function PlayZone ( props ) {
                 </span>
             }
           </div>
-          <span className="fullscreen" onClick={ () => toogleFullscreen() }>
-            { hasFullScreen === 'full-screen'
-              ? <i className="las la-compress-arrows-alt"></i>
-              : <i className="las la-compress"></i>
-            }
-          </span>
+          {
+            hasFullScreen === 'full-screen'
+              ? <span className="fullscreen" onClick={ () => exitFullscreen() }>
+                <i className="las la-compress-arrows-alt"></i>
+              </span>
+              : <span className="fullscreen" onClick={ () => requestFullscreen() }>
+                <i className="las la-compress"></i>
+              </span>
+          }
         </div>
       </div>
     </div>

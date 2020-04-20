@@ -20,7 +20,9 @@ export default class Searchbar extends Component {
 
   render () {
     const { search } = this.state
-    const modalUser = this.state.showModalUser ? 'searchbar--menu-user modal-user active' : 'searchbar--menu-user modal-user'
+    const modalUser = this.state.showModalUser
+      ? 'searchbar--menu-user modal-user active'
+      : 'searchbar--menu-user modal-user'
 
     return (
       <div className="searchbar">
