@@ -18,12 +18,11 @@ export default function Menu ( props ) {
 
   useEffect( () => {
     window.addEventListener( 'keydown', function ( event ) {
-      if ( event.key === 'Escape' && hideModal === false ) {
-        event.preventDefault()
+      if ( event.keyCode === 27 ) {
         setHideModal( true )
       }
-    } )
-  }, [ hideModal ] )
+    }, [ hideModal ] )
+  } )
 
   const checkFullscreen = () => {
     if ( document.fullscreenElement === null ) {

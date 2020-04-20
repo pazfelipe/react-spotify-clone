@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { requestFullscreen, exitFullscreen } from '../utils/utils'
 
 export default function PlayZone ( props ) {
 
@@ -19,31 +20,6 @@ export default function PlayZone ( props ) {
   const icon = ( volumeLevel < 1 || mute !== null ) ? <i className="las la-volume-mute"></i> :
     volumeLevel < 51 ? <i className="las la-volume-down"></i>
       : <i className="las la-volume-up"></i>
-
-  const requestFullscreen = () => {
-    // - FIXME - exitFullscreen não está funcionando
-    if ( document.documentElement.requestFullscreen ) {
-      document.documentElement.requestFullscreen()
-    } else if ( document.documentElement.mozRequestFullScreen ) { /* Firefox */
-      document.documentElement.mozRequestFullScreen()
-    } else if ( document.documentElement.webkitRequestFullscreen ) { /* Chrome, Safari & Opera */
-      document.documentElement.webkitRequestFullscreen()
-    } else if ( document.documentElement.msRequestFullscreen ) { /* IE/Edge */
-      document.documentElement.msRequestFullscreen()
-    }
-  }
-
-  const exitFullscreen = () => {
-    if ( document.exitFullscreen ) {
-      document.exitFullscreen()
-    } else if ( document.mozCancelFullScreen ) { /* Firefox */
-      document.mozCancelFullScreen()
-    } else if ( document.webkitExitFullscreen ) { /* Chrome, Safari and Opera */
-      document.webkitExitFullscreen()
-    } else if ( document.msExitFullscreen ) { /* IE/Edge */
-      document.msExitFullscreen()
-    }
-  }
 
   const toggleMute = () => {
     if ( volumeLevel < 1 ) return

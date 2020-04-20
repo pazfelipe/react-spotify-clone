@@ -73,7 +73,7 @@ export default class Searchbar extends Component {
                 </li>
               <li className="modal-user">Account</li>
               <li className="modal-user">Settings</li>
-              <li className="modal-user">Log out</li>
+              <li className="modal-user" onClick={ () => alert( 'I think you shouldn\'t do that' ) }>Log out</li>
             </ul>
           </div>
         </div>
