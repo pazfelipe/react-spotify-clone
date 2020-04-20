@@ -163,9 +163,12 @@ body {
 }
 
 .main-menu .menu-playlists ul:nth-child(2) {
-  max-height: 120px;
+  height: 120px;
   overflow-y: scroll;
   margin-top: 10px;
+}
+.main-menu .menu-playlists ul:nth-child(2).full-screen {
+  height: 210px;
 }
 
 .main-menu .new-playlist {

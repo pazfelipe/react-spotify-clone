@@ -6,6 +6,14 @@ import ModalPlaylist from './ModalNewPlaylist'
 export default function Menu ( props ) {
 
   const [hideModal, setHideModal] = useState( true )
+  const [hasFullScreen, setHasFullScreen] = useState()
+
+  const checkFullscreen = () => {
+    if ( document.fullscreenElement === null ) {
+      return setHasFullScreen( null )
+    }
+    setHasFullScreen( 'full-screen' )
+  }
 
   useEffect( () => {
     window.addEventListener( 'click', function ( event ) {
@@ -23,6 +31,13 @@ export default function Menu ( props ) {
     } )
   }, [hideModal] )
 
+  useEffect( () => {
+    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach(
+      event => document.addEventListener( event, function ( e ) {
+        checkFullscreen()
+      }, false )
+    )
+  }, [] )
 
   return (
     <>
@@ -64,7 +79,7 @@ export default function Menu ( props ) {
           <ul>
             <li className="menu-playlists--label">Playslits</li>
           </ul>
-          <ul>
+          <ul className={hasFullScreen}>
             <li className="menu-playlists--item">Discover weekly</li>
             <li className="menu-playlists--item">Discover weekly</li>
             <li className="menu-playlists--item">Discover weekly</li>
