@@ -19,6 +19,7 @@ export default function Menu ( props ) {
   useEffect( () => {
     window.addEventListener( 'keydown', function ( event ) {
       if ( event.key === 'Escape' && hideModal === false ) {
+        event.preventDefault()
         setHideModal( true )
       }
     } )
@@ -34,7 +35,6 @@ export default function Menu ( props ) {
   useEffect( () => {
     [ "fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange" ].forEach(
       event => document.addEventListener( event, function ( e ) {
-        console.log( e )
         checkFullscreen()
       }, false )
     )

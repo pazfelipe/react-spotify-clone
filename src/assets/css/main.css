@@ -93,14 +93,15 @@ body {
   position: relative;
 }
 
+.playing-zone .playing-zone--control .buttons .shuffle.active::before,
 .playing-zone .playing-zone--control .buttons .repeat.active::before {
   content: '';
   position: absolute;
-  bottom: -30%;
+  bottom: -35%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background-color: var(--default-green);
   border-radius: 50%;
 }
@@ -239,6 +240,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 11px;
+  outline: none;
 }
 
 .side-left button:hover {
