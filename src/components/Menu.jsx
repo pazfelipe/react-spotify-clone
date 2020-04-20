@@ -8,13 +8,6 @@ export default function Menu ( props ) {
   const [ hideModal, setHideModal ] = useState( true )
   const [ hasFullScreen, setHasFullScreen ] = useState()
 
-  const checkFullscreen = () => {
-    if ( document.fullscreenElement === null ) {
-      return setHasFullScreen( null )
-    }
-    setHasFullScreen( 'full-screen' )
-  }
-
   useEffect( () => {
     window.addEventListener( 'click', function ( event ) {
       const elementClicked = event.target
@@ -30,6 +23,13 @@ export default function Menu ( props ) {
       }
     } )
   }, [ hideModal ] )
+
+  const checkFullscreen = () => {
+    if ( document.fullscreenElement === null ) {
+      return setHasFullScreen( null )
+    }
+    setHasFullScreen( 'full-screen' )
+  }
 
   useEffect( () => {
     [ "fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange" ].forEach(

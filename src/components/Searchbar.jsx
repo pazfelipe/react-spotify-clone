@@ -37,7 +37,7 @@ export default class Searchbar extends Component {
         <div className="searchbar--middle"></div>
         <div className="searchbar--user">
           <span><i className="lar la-user-circle"></i></span>
-          <span onClick={ () => document.documentElement.requestFullscreen() } >username</span>
+          <span >username</span>
           <span onClick={ () => this.setState( { showModalUser: true } ) } > <i className="las la-angle-down modal-user"></i> </span>
           <div className={ modalUser }>
             <ul className="modal-user">

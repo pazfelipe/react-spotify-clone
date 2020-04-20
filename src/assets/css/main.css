@@ -84,7 +84,7 @@ body {
 }
 
 .playing-zone .playing-zone--control .buttons .play {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .playing-zone .playing-zone--control .buttons .shuffle.active,
@@ -119,7 +119,7 @@ body {
 .playing-zone .playing-zone--control .progress-bar {
   background-color: var(--soft-grey-2);
   width: 70%;
-  height: 5px;
+  height: 4px;
   border-radius: 50px;
   margin-top: 5px;
   position: relative;
@@ -137,7 +137,70 @@ body {
 }
 
 .playing-zone .playing-zone--actions {
-  background-color: purple;
+  font-size: 1.3em;
+  color: var(--light-grey);
+}
+
+.playing-zone .playing-zone--actions .container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playing-zone .playing-zone--actions span:hover {
+  color: var(--white);
+}
+
+.playing-zone .playing-zone--actions .volume {
+  width: 60%;
+  position: relative;
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar {
+  width: 70%;
+  height: 5px;
+  position: absolute;
+  right: 5px;
+  top: 40%;
+  border-radius: 50px;
+  background-color: var(--light-grey);
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar:hover {
+  background-color: var(--default-green);
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  transform: translate(0, -12%);
+  right: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--white);
+  opacity: 0;
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  transform: translate(-78%, 50%);
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--light-grey);
+  opacity: 0;
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar:active::after ,
+.playing-zone .playing-zone--actions .volume .volume--bar:hover::before {
+  opacity: 1;
 }
 
 .main {
