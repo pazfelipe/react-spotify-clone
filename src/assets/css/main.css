@@ -41,6 +41,8 @@ body {
   height: 89vh;
   overflow-y: scroll;
   position: relative;
+  padding-top: 50px;
+  box-sizing: border-box;
 }
 .side-left {
   grid-area: side;
@@ -56,6 +58,10 @@ body {
   grid-template-columns: 190px 4fr 1fr;
 }
 
+.main-menu {
+  user-select: none;
+}
+
 .main-menu ul {
   display: flex;
   flex-direction: column;
@@ -67,12 +73,22 @@ body {
 
 .main-menu li {
   list-style: none;
-  color: var(--grey-white);
   padding-left: 30px;
   box-sizing: border-box;
+  color: var(--grey-white); /* - REVIEW - excluir isso aqui depois que todos os li tiverem link */
 }
 
+.main-menu li a {
+  color: var(--grey-white);
+  text-decoration: none;
+}
+
+/* - REVIEW - excluir isso aqui depois que todos os li tiverem link */
 .main-menu li:hover {
+  color: var(--white);
+}
+
+.main-menu li:hover a {
   color: var(--white);
 }
 
@@ -87,18 +103,29 @@ body {
   font-weight: bold;
 }
 
-.main-menu .menu-header .menu-header--item.active {
+.main-menu .menu-header .menu-header--item i {
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+.main-menu .menu-header .menu-header--item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.main-menu .menu-header .menu-header--item a.active {
   position: relative;
   color: var(--white);
 }
 
-.main-menu .menu-header .menu-header--item.active::before {
+.main-menu .menu-header .menu-header--item a.active::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -30px;
+  top: -15%;
   width: 5px;
-  height: 100%;
+  height: 130%;
   background-color: var(--default-green);
 }
 
@@ -118,6 +145,11 @@ body {
 .main-menu .menu-library .menu-library--label,
 .main-menu .menu-library .menu-library--item {
   font-weight: bold;
+}
+
+.main-menu .menu-library .menu-library--item {
+  height: 30px;
+  padding: 0 0 0 30px;
 }
 
 .main-menu .menu-playlists .menu-playlists--item,
