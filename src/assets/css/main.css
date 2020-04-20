@@ -479,7 +479,7 @@ body {
   justify-content: center;
 }
 
-.searchbar .searchbar--user div:nth-child(1) {
+.searchbar .searchbar--user div:nth-child(1) a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -506,6 +506,11 @@ body {
   margin-left: 20px;
 }
 
+.searchbar .searchbar--user div:nth-child(1) a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 .searchbar .searchbar--user span:nth-child(2) {
   border-bottom: 1px solid transparent;
 }
@@ -514,6 +519,7 @@ body {
   border-bottom-color: var(--white);
 }
 
+.searchbar .searchbar--user div:nth-child(1):active a,
 .searchbar .searchbar--user div:nth-child(1):active span:nth-child(2),
 .searchbar .searchbar--user div:nth-child(1):active,
 .searchbar .searchbar--user div:nth-child(2):active {

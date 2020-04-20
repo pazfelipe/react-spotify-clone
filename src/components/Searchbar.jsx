@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default class Searchbar extends Component {
 
@@ -38,16 +39,18 @@ export default class Searchbar extends Component {
         <div className="searchbar--middle"></div>
         <div className="searchbar--user">
           <div>
-            <span
-              style={ { position: 'relative' } }>
-              {
-                this.state.private
-                  ? <span className="lock"><i class="las la-lock"></i></span>
-                  : null
-              }
-              <i className="lar la-user-circle"></i>
-            </span>
-            <span >username</span>
+            <NavLink to="/profile">
+              <span
+                style={ { position: 'relative' } }>
+                {
+                  this.state.private
+                    ? <span className="lock"><i class="las la-lock"></i></span>
+                    : null
+                }
+                <i className="lar la-user-circle"></i>
+              </span>
+              <span >username</span>
+            </NavLink>
           </div>
           <span
             onClick={ () => this.setState( { showModalUser: true } ) } >

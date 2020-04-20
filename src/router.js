@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from './pages/App'
 import Browse from './pages/Browse'
 import Radio from './pages/Radio'
+import Profile from './pages/Profile'
 
 export default function () {
   return <BrowserRouter>
@@ -10,6 +11,7 @@ export default function () {
       <Route component={App} path="/" exact />
       <Route component={Browse} path="/browse"  />
       <Route component={Radio} path="/radio"  />
+      <Route component={Profile} path="/profile"  />
     </Switch>
   </BrowserRouter>
 }
