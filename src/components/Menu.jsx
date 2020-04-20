@@ -5,8 +5,8 @@ import ModalPlaylist from './ModalNewPlaylist'
 
 export default function Menu ( props ) {
 
-  const [hideModal, setHideModal] = useState( true )
-  const [hasFullScreen, setHasFullScreen] = useState()
+  const [ hideModal, setHideModal ] = useState( true )
+  const [ hasFullScreen, setHasFullScreen ] = useState()
 
   const checkFullscreen = () => {
     if ( document.fullscreenElement === null ) {
@@ -29,14 +29,19 @@ export default function Menu ( props ) {
         setHideModal( true )
       }
     } )
-  }, [hideModal] )
+  }, [ hideModal ] )
 
   useEffect( () => {
-    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach(
+    [ "fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange" ].forEach(
       event => document.addEventListener( event, function ( e ) {
+        console.log( e )
         checkFullscreen()
       }, false )
     )
+  }, [] )
+
+  useEffect( () => {
+    checkFullscreen()
   }, [] )
 
   return (
@@ -79,7 +84,7 @@ export default function Menu ( props ) {
           <ul>
             <li className="menu-playlists--label">Playslits</li>
           </ul>
-          <ul className={hasFullScreen}>
+          <ul className={ hasFullScreen }>
             <li className="menu-playlists--item">Discover weekly</li>
             <li className="menu-playlists--item">Discover weekly</li>
             <li className="menu-playlists--item">Discover weekly</li>
@@ -91,14 +96,14 @@ export default function Menu ( props ) {
             <li className="menu-playlists--item">Discover weekly</li>
           </ul>
         </div>
-        <div className="new-playlist" onClick={() => setHideModal( false )} data-modal>
+        <div className="new-playlist" onClick={ () => setHideModal( false ) } data-modal>
           <span className="new-playlist--icon" data-modal>
             <i className="las la-plus-circle" data-modal></i>
           </span>
           <span className="new-playlist--label" data-modal>New playlist</span>
         </div>
       </div>
-      <ModalPlaylist hide={hideModal} />
+      <ModalPlaylist hide={ hideModal } />
     </>
   )
 }

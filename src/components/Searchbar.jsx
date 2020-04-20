@@ -31,15 +31,15 @@ export default class Searchbar extends Component {
           <input
             placeholder="Search"
             type="search"
-            onChange={event => this.setState( { search: event.target.value } )}
-            value={search} onFocus={() => this.setState( { search: '' } )} />
+            onChange={ event => this.setState( { search: event.target.value } ) }
+            value={ search } onFocus={ () => this.setState( { search: '' } ) } />
         </div>
         <div className="searchbar--middle"></div>
         <div className="searchbar--user">
           <span><i className="lar la-user-circle"></i></span>
-          <span onClick={() => document.documentElement.requestFullscreen()} >username</span>
-          <span onClick={() => this.setState( { showModalUser: true } )} > <i className="las la-angle-down modal-user"></i> </span>
-          <div className={modalUser}>
+          <span onClick={ () => document.documentElement.requestFullscreen() } >username</span>
+          <span onClick={ () => this.setState( { showModalUser: true } ) } > <i className="las la-angle-down modal-user"></i> </span>
+          <div className={ modalUser }>
             <ul className="modal-user">
               <li className="modal-user">Private session</li>
               <li className="modal-user">Account</li>
