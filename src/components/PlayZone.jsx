@@ -119,8 +119,11 @@ export default function PlayZone ( props ) {
                 ? null
                 :
                 <span className="volume--bar">
-                  <span className="volume-range"></span>
-                  <span className="volume-range-indicator" style={ { width: ( volumeLevel ) + '%' } }></span>
+                  <span className="volume-range"
+                    style={ { width: ( volumeLevel > 96 ? 96 : 100 ) + '%' } }
+                  ></span>
+                  <span className="volume-range-indicator"
+                    style={ { width: ( volumeLevel > 96 ? 96 : volumeLevel ) + '%' } }></span>
                   <input
                     type="range"
                     value={ volumeLevel }

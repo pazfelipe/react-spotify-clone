@@ -1,5 +1,4 @@
 export const requestFullscreen = () => {
-  // - FIXME - exitFullscreen não está funcionando
   if ( document.documentElement.requestFullscreen ) {
     document.documentElement.requestFullscreen()
   } else if ( document.documentElement.mozRequestFullScreen ) { /* Firefox */
