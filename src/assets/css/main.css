@@ -476,14 +476,26 @@ body {
   justify-content: center;
 }
 
+.searchbar .searchbar--user div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-right: 10px;
+}
+
 .searchbar .searchbar--user span {
   margin-right: 5px;
   display: inline-block;
   height: 30px;
 }
 
+.searchbar .searchbar--user div:nth-child(1) span:nth-child(2) {
+  margin-top: -5px;
+}
+
 .searchbar .searchbar--user span:first-child {
-  font-size: 1.8em;
+  font-size: 2.6em;
 }
 
 .searchbar .searchbar--user span:nth-child(3) {
@@ -491,14 +503,40 @@ body {
   margin-left: 20px;
 }
 
+.searchbar .searchbar--user span:nth-child(2) {
+  border-bottom: 1px solid transparent;
+}
+
 .searchbar .searchbar--user span:nth-child(2):hover {
-  border-bottom: 1px solid var(--white);
+  border-bottom-color: var(--white);
+}
+
+.searchbar .searchbar--user div:nth-child(1):active span:nth-child(2),
+.searchbar .searchbar--user div:nth-child(1):active,
+.searchbar .searchbar--user div:nth-child(2):active {
+  color: var(--grey-white);
+  border-bottom-color: var(--grey-white);
+}
+
+.searchbar .searchbar--user .lock {
+  position: absolute;
+  font-size: 14px !important;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -5px;
+  right: -5px;
+  background: #0051ff;
+  color: var(--white);
+  border-radius: 50%;
 }
 
 .searchbar .searchbar--menu-user {
   position: absolute;
   bottom: -155px;
-  right: 28px;
+  right: 30px;
   width: 210px;
   height: 150px;
   background-color: var(--soft-grey);
@@ -537,12 +575,14 @@ body {
   padding-left: 20px;
   font-size: 14px;
   height: calc(150px / 4);
-  color: var(--grey-white);
+  color: var(--white);
+  opacity: .8;
 }
 
 .searchbar .searchbar--menu-user ul li:hover {
   background-color: var(--soft-grey-2);
   color: var(--white);
+  opacity: 1;
 }
 
 .modal-playlist {

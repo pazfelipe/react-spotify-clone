@@ -4,7 +4,8 @@ export default class Searchbar extends Component {
 
   state = {
     search: '',
-    showModalUser: false
+    showModalUser: false,
+    private: false
   }
 
   componentDidMount () {
@@ -36,12 +37,35 @@ export default class Searchbar extends Component {
         </div>
         <div className="searchbar--middle"></div>
         <div className="searchbar--user">
-          <span><i className="lar la-user-circle"></i></span>
-          <span >username</span>
-          <span onClick={ () => this.setState( { showModalUser: true } ) } > <i className="las la-angle-down modal-user"></i> </span>
+          <div>
+            <span
+              style={ { position: 'relative' } }>
+              {
+                this.state.private
+                  ? <span className="lock"><i class="las la-lock"></i></span>
+                  : null
+              }
+              <i className="lar la-user-circle"></i>
+            </span>
+            <span >username</span>
+          </div>
+          <span
+            onClick={ () => this.setState( { showModalUser: true } ) } >
+            <i className="las la-angle-down modal-user"></i>
+          </span>
           <div className={ modalUser }>
             <ul className="modal-user">
-              <li className="modal-user">Private session</li>
+              <li
+                onClick={ () => this.setState( { private: !this.state.private } ) }
+                className={ this.state.private ? 'text-green-light' : '' }
+              >
+                {
+                  this.state.private
+                    ? <i class="las la-check" style={ { marginRight: '10px', fontSize: '1em' } }></i>
+                    : null
+                }
+                Private session
+                </li>
               <li className="modal-user">Account</li>
               <li className="modal-user">Settings</li>
               <li className="modal-user">Log out</li>

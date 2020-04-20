@@ -10,3 +10,11 @@
   --grey-white: #b9b9b9;
   --white: #fff;
 }
+
+.text-green {
+  color: var(--default-green) !important;
+}
+
+.text-green-light {
+  color: var(--default-green-light) !important;
+}

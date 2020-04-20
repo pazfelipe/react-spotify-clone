@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 export default function PlayZone ( props ) {
 
   const [ hasFullScreen, setHasFullScreen ] = useState()
-  const [ mute, setMute ] = useState( false )
+  const [ mute, setMute ] = useState( null )
   const [ playing, setPlay ] = useState( 'play' )
   const [ volumeLevel, setVolumeLevel ] = useState( 100 )
 
@@ -15,7 +15,7 @@ export default function PlayZone ( props ) {
     setHasFullScreen( 'full-screen' )
   }
 
-  const icon = ( volumeLevel < 1 ) ? <i className="las la-volume-mute"></i> :
+  const icon = ( volumeLevel < 1 || mute !== null ) ? <i className="las la-volume-mute"></i> :
     volumeLevel < 51 ? <i className="las la-volume-down"></i>
       : <i className="las la-volume-up"></i>
 
@@ -39,6 +39,16 @@ export default function PlayZone ( props ) {
       document.webkitExitFullscreen()
     } else if ( document.msExitFullscreen ) { /* IE/Edge */
       document.msExitFullscreen()
+    }
+  }
+
+  const toggleMute = () => {
+    if ( volumeLevel < 1 ) return
+    if ( !mute ) {
+      setMute( volumeLevel )
+    } else {
+      setVolumeLevel( mute )
+      setMute( null )
     }
   }
 
@@ -116,7 +126,7 @@ export default function PlayZone ( props ) {
             <i className="lar la-window-restore"></i>
           </span>
           <div className="volume">
-            <span onClick={ () => setVolumeLevel( 0 ) }>
+            <span onClick={ () => toggleMute() }>
               { icon }
             </span>
             {
@@ -126,7 +136,10 @@ export default function PlayZone ( props ) {
                 <span className="volume--bar">
                   <span className="volume-range"></span>
                   <span className="volume-range-indicator" style={ { width: ( volumeLevel ) + '%' } }></span>
-                  <input type="range" value={ volumeLevel } onChange={ event => setVolumeLevel( event.target.value ) } />
+                  <input
+                    type="range"
+                    value={ volumeLevel }
+                    onChange={ event => setVolumeLevel( event.target.value ) } />
                 </span>
             }
           </div>
