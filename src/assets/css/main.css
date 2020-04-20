@@ -2,8 +2,8 @@
   --default-green: #1db954;
   --default-green-light: #1cd85e;
   --black: #000000;
-  --darkest-grey: #121212;
   --grey: #181818;
+  --darkest-grey: #121212;
   --soft-grey: #282828;
   --soft-grey-2: #404040;
   --light-grey: #b3b3b3;
@@ -12,6 +12,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;800&display=swap');
+@import url('./utils.css');
 
 body {
   background-color: var(--grey-darkest);
@@ -164,44 +165,43 @@ body {
   height: 5px;
   position: absolute;
   right: 5px;
-  top: 40%;
+  top: -15%;
   border-radius: 50px;
+}
+.playing-zone .playing-zone--actions .volume .volume--bar input[type='range'] {
+  z-index: 5;
+}
+
+.playing-zone .playing-zone--actions .volume .volume--bar .volume-range {
+  position: absolute;
+  bottom: -305%;
+  left: 2%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-grey-2);
+  border-radius: 50px;
+}
+
+.playing-zone
+  .playing-zone--actions
+  .volume
+  .volume--bar
+  .volume-range-indicator {
+  position: absolute;
+  bottom: -305%;
+  left: 2%;
+  width: 60%;
+  height: 100%;
   background-color: var(--light-grey);
+  border-radius: 50px;
 }
 
-.playing-zone .playing-zone--actions .volume .volume--bar:hover {
+.playing-zone
+  .playing-zone--actions
+  .volume
+  .volume--bar:hover
+  .volume-range-indicator {
   background-color: var(--default-green);
-}
-
-.playing-zone .playing-zone--actions .volume .volume--bar::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  transform: translate(0, -12%);
-  right: 0;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--white);
-  opacity: 0;
-}
-
-.playing-zone .playing-zone--actions .volume .volume--bar::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  transform: translate(-78%, 50%);
-  right: 0;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--light-grey);
-  opacity: 0;
-}
-
-.playing-zone .playing-zone--actions .volume .volume--bar:active::after ,
-.playing-zone .playing-zone--actions .volume .volume--bar:hover::before {
-  opacity: 1;
 }
 
 .main {

@@ -6,6 +6,7 @@ export default function PlayZone ( props ) {
   const [ hasFullScreen, setHasFullScreen ] = useState()
   const [ mute, setMute ] = useState( false )
   const [ playing, setPlay ] = useState( 'play' )
+  const [ volumeLevel, setVolumeLevel ] = useState( 100 )
 
   const checkFullscreen = () => {
     if ( document.fullscreenElement === null ) {
@@ -13,6 +14,10 @@ export default function PlayZone ( props ) {
     }
     setHasFullScreen( 'full-screen' )
   }
+
+  const icon = ( volumeLevel < 1 ) ? <i className="las la-volume-mute"></i> :
+    volumeLevel < 51 ? <i className="las la-volume-down"></i>
+      : <i className="las la-volume-up"></i>
 
   const toogleFullscreen = () => {
     // - FIXME - exitFullscreen não está funcionando
@@ -111,18 +116,17 @@ export default function PlayZone ( props ) {
             <i className="lar la-window-restore"></i>
           </span>
           <div className="volume">
-            <span onClick={ () => setMute( !mute ) }>
-              {
-                mute
-                  ? <i className="las la-volume-mute"></i>
-                  : <i className="las la-volume-up"></i>
-              }
+            <span onClick={ () => setVolumeLevel( 0 ) }>
+              { icon }
             </span>
             {
               mute
                 ? null
-                : <span className="volume--bar">
-                  {/* <input type="range" /> */ }
+                :
+                <span className="volume--bar">
+                  <span className="volume-range"></span>
+                  <span className="volume-range-indicator" style={ { width: ( volumeLevel ) + '%' } }></span>
+                  <input type="range" value={ volumeLevel } onChange={ event => setVolumeLevel( event.target.value ) } />
                 </span>
             }
           </div>
