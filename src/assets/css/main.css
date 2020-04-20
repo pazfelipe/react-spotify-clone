@@ -18,6 +18,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -41,7 +42,7 @@ body {
   height: 89vh;
   overflow-y: scroll;
   position: relative;
-  padding-top: 50px;
+  padding: 50px 20px 30px;
   box-sizing: border-box;
 }
 .side-left {
@@ -75,7 +76,9 @@ body {
   list-style: none;
   padding-left: 30px;
   box-sizing: border-box;
-  color: var(--grey-white); /* - REVIEW - excluir isso aqui depois que todos os li tiverem link */
+  color: var(
+    --grey-white
+  ); /* - REVIEW - excluir isso aqui depois que todos os li tiverem link */
 }
 
 .main-menu li a {
@@ -204,9 +207,10 @@ body {
   width: 100%;
   height: 40px;
   line-height: 40px;
-  background-color: var(--grey);
+  /* background-color: var(--grey); */
+  background-color: transparent;
   display: grid;
-  grid-template-columns: 80px 180px auto 190px;
+  grid-template-columns: 100px 180px auto 190px;
   color: var(--grey-white);
   box-sizing: border-box;
 }
@@ -214,6 +218,7 @@ body {
 .searchbar .searchbar--icon {
   text-align: center;
   margin-top: 4px;
+  margin-left: 5px;
 }
 
 .searchbar .searchbar--icon span {

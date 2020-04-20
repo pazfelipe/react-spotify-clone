@@ -31,19 +31,19 @@ export default function Menu ( props ) {
           <ul>
             <li className="menu-header--item active">
               <NavLink exact activeClassName="active" to="/">
-                <i class="las la-home"></i>
+                <i className="las la-home"></i>
                 Home
                 </NavLink>
             </li>
             <li className="menu-header--item">
               <NavLink exact activeClassName="active" to="/browse">
-                <i class="las la-archive"></i>
+                <i className="las la-archive"></i>
                 Browse
               </NavLink>
             </li>
             <li className="menu-header--item">
               <NavLink exact activeClassName="active" to="/radio">
-                <i class="las la-broadcast-tower"></i>
+                <i className="las la-broadcast-tower"></i>
                 Radio
                 </NavLink>
             </li>
