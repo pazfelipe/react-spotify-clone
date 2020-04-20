@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import ModalPlaylist from './ModalNewPlaylist'
 
 export default function Menu ( props ) {
+
+  const [hideModal, setHideModal] = useState( true )
+
+  useEffect( () => {
+    window.addEventListener( 'click', function ( event ) {
+      const elementClicked = event.target
+      if ( elementClicked.hasAttribute( 'data-modal' ) ) return
+      setHideModal( true )
+    } )
+  }, [] )
+
+
   return (
     <div className="main-menu">
       <div className="menu-header">
@@ -37,12 +51,13 @@ export default function Menu ( props ) {
           <li className="menu-playlists--item">Discover weekly</li>
         </ul>
       </div>
-      <div className="new-playlist" onClick={() => alert( 'Vai abrir uma modal' )}>
-        <p>
-          <span className="new-playlist--icon">+</span>
-          <span className="new-playlist--label">New playlist</span>
-        </p>
+      <div className="new-playlist" onClick={() => setHideModal( false )} data-modal>
+        <span className="new-playlist--icon" data-modal>
+          <i className="las la-plus-circle" data-modal></i>
+        </span>
+        <span className="new-playlist--label" data-modal>New playlist</span>
       </div>
+      <ModalPlaylist hide={hideModal} />
     </div>
   )
 }
