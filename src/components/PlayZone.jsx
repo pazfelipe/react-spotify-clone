@@ -7,6 +7,7 @@ export default function PlayZone ( props ) {
   const [ mute, setMute ] = useState( null )
   const [ playing, setPlay ] = useState( 'play' )
   const [ volumeLevel, setVolumeLevel ] = useState( 100 )
+  const [ posMusic, setPosMusic ] = useState( 0 )
 
   const checkFullscreen = () => {
     if ( document.fullscreenElement === null ) {
@@ -115,7 +116,13 @@ export default function PlayZone ( props ) {
             <i className="las la-redo-alt"></i>
           </span>
         </div>
-        <div className="progress-bar"></div>
+        <div className="progress-bar">
+          <span className="volume-range-indicator" style={ { width: ( posMusic ) + '%' } }></span>
+          <input
+            type="range"
+            value={ posMusic }
+            onChange={ event => setPosMusic( event.target.value ) } />
+        </div>
       </div>
       <div className="playing-zone--actions">
         <div className="container">

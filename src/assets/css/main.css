@@ -125,9 +125,12 @@ body {
   border-radius: 50px;
   margin-top: 5px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.playing-zone .playing-zone--control .progress-bar::before {
+.playing-zone .playing-zone--control .progress-bar .volume-range-indicator {
   content: '';
   position: absolute;
   top: 0;
@@ -576,7 +579,7 @@ body {
   font-size: 14px;
   height: calc(150px / 4);
   color: var(--white);
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .searchbar .searchbar--menu-user ul li:hover {
