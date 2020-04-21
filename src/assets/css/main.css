@@ -827,7 +827,7 @@ body {
   background-color: var(--default-green-light);
 }
 
-.annoucements {
+.announcements {
   width: 100%;
   height: 280px;
   padding: 10px 10%;
@@ -836,7 +836,7 @@ body {
   overflow: hidden;
 }
 
-.annoucements-container {
+.announcements-container {
   width: 100%;
   height: 100%;
   display: grid;
@@ -846,7 +846,7 @@ body {
   box-sizing: border-box;
 }
 
-.annoucements-container .annoucements-container--close {
+.announcements-container .announcements-container--close {
   position: absolute;
   top: 10px;
   right: 0;
@@ -860,11 +860,11 @@ body {
   transition: 0.1s linear;
 }
 
-.annoucements-container .annoucements-container--close:hover {
+.announcements-container .announcements-container--close:hover {
   opacity: 1;
 }
 
-.annoucements .annoucements-background {
+.announcements .announcements-background {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -877,12 +877,12 @@ body {
   opacity: 0.3;
 }
 
-.annoucements-container--thumbnail,
-.annoucements-container--info {
+.announcements-container--thumbnail,
+.announcements-container--info {
   z-index: 1;
 }
 
-.annoucements-container--thumbnail {
+.announcements-container--thumbnail {
   background-color: green;
   background-position: center;
   background-size: cover;
@@ -890,7 +890,7 @@ body {
   height: 100%;
 }
 
-.annoucements-container--info {
+.announcements-container--info {
   width: 100%;
   height: 100%;
   display: grid;
@@ -900,65 +900,69 @@ body {
   box-sizing: border-box;
 }
 
-.annoucements-container--info .title {
+.announcements-container--info .title {
   width: 100%;
 }
 
-.annoucements-container--info .title p,
-.annoucements-container--info .title h1 {
+.announcements-container--info .title p,
+.announcements-container--info .title h1 {
   margin: 0;
 }
 
-.annoucements-container--info .title p {
+.announcements-container--info .title p {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
   color: var(--light-grey);
 }
 
-.annoucements-container--info .title span {
+.announcements-container--info .title span {
   font-size: 11px;
   color: var(--light-grey);
 }
 
-.annoucements-container--info .actions {
+.announcements-container--info .actions {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-.annoucements-container--info .actions .actions--button {
+.announcements-container--info .actions .actions--button {
   text-transform: uppercase;
   border: 1px solid var(--white);
   margin-right: 10px;
-  /* opacity: .8; */
   color: var(--white);
   font-weight: bold;
   outline: none;
+  font-size: 12px;
 }
 
-.annoucements-container--info .actions .actions--button:hover {
+.announcements-container--info .actions .actions--button.play,
+.announcements-container--info .actions .actions--button.follow {
+  padding: 7px 35px;
+  border-radius: 50px;
+  opacity: 0.8;
+}
+
+.announcements-container--info .actions .actions--button:hover {
   transform: scale(1.1);
   opacity: 1;
 }
 
-.annoucements-container--info .actions .actions--button.play,
-.annoucements-container--info .actions .actions--button.follow {
-  padding: 7px 35px;
-  border-radius: 50px;
-}
-
-.annoucements-container--info .actions .actions--button.play {
+.announcements-container--info .actions .actions--button.play {
   background-color: var(--default-green);
   border-color: transparent;
 }
 
-.annoucements-container--info .actions .actions--button.follow {
+.announcements-container--info .actions .actions--button.follow {
   background-color: var(--grey);
+  width: 140px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.annoucements-container--info .actions .actions--button.menu {
+.announcements-container--info .actions .actions--button.menu {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -966,7 +970,7 @@ body {
   position: relative;
 }
 
-.annoucements-container--info .actions .actions--button.menu > span {
+.announcements-container--info .actions .actions--button.menu > span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -974,7 +978,7 @@ body {
   letter-spacing: 1px;
 }
 
-.annoucements--menu {
+.announcements--menu {
   position: absolute;
   bottom: -150px;
   right: 10px;
@@ -988,36 +992,36 @@ body {
   box-sizing: border-box;
 }
 
-.annoucements--menu ul {
+.announcements--menu ul {
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
 }
 
-.annoucements--menu li {
+.announcements--menu li {
   list-style: none;
   padding: 10px 30px;
   opacity: 0.7;
 }
 
-.annoucements--menu li:hover {
+.announcements--menu li:hover {
   background-color: var(--soft-grey-2);
   opacity: 1;
 }
 
-.annoucements--menu li.disabled {
+.announcements--menu li.disabled {
   opacity: 0.7 !important;
   color: var(--soft-grey-3);
   font-weight: bold;
   background-color: var(--soft-grey) !important;
 }
 
-.annoucements--menu li.submenu {
+.announcements--menu li.submenu {
   position: relative;
 }
 
-.annoucements--menu li.submenu > i {
+.announcements--menu li.submenu > i {
   position: absolute;
   top: 50%;
   right: 5px;
@@ -1025,7 +1029,7 @@ body {
   font-size: 16px;
 }
 
-.annoucements--menu li.submenu .annoucements--menu  {
+.announcements--menu li.submenu .announcements--menu {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -1035,22 +1039,29 @@ body {
   width: 220px;
 }
 
-.annoucements--menu li.submenu .annoucements--menu li {
+.announcements--menu li.submenu .announcements--menu li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 7px 30px;
 }
 
-.annoucements--menu li.submenu .annoucements--menu li i {
-  font-size: 1.7em;
+.announcements--menu li.submenu .announcements--menu li i {
+  font-size: 1.2em;
   margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
 }
 
-.annoucements--menu li.submenu .annoucements--menu li span {
+.announcements--menu li.submenu .announcements--menu li span {
   margin-top: -3px;
 }
 
-.annoucements--menu li.submenu:hover .annoucements--menu {
+.announcements--menu li.submenu:hover .announcements--menu {
   display: block;
 }
