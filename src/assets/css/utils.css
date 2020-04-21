@@ -104,3 +104,12 @@ input[type='range']:focus::-ms-fill-lower {
 input[type='range']:focus::-ms-fill-upper {
   /* background: var(--light-grey); */
 }
+
+li.separator:hover,
+li.separator {
+  border-top: 1px solid var(--soft-grey-2);
+  margin: 3px 0 !important;
+  padding: 0 !important;
+  height: 1px !important;
+  opacity: 1 !important;
+}
