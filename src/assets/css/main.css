@@ -205,7 +205,7 @@ body {
   height: 89vh;
   overflow-y: scroll;
   position: relative;
-  padding: 50px 20px 30px;
+  padding: 50px 0 30px;
   box-sizing: border-box;
   color: var(--white);
 }
@@ -400,10 +400,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
-  /* background-color: var(--grey); */
-  background-color: transparent;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--grey);
   display: grid;
   grid-template-columns: 100px 180px auto 190px;
   color: var(--grey-white);
@@ -412,7 +411,7 @@ body {
 
 .searchbar .searchbar--icon {
   text-align: center;
-  margin-top: 4px;
+  margin-top: 0px;
   margin-left: 5px;
 }
 
@@ -437,7 +436,7 @@ body {
   border-radius: 50px;
   height: 25px;
   position: relative;
-  margin-top: 10px;
+  margin-top: 13px;
   padding-top: -10px;
   display: flex;
   overflow: hidden;
@@ -529,7 +528,7 @@ body {
   align-items: center;
   bottom: -5px;
   right: -5px;
-  background: #0051ff;
+  background: var(--blue-1);
   color: var(--white);
   border-radius: 50%;
 }
@@ -826,4 +825,162 @@ body {
 .modal-playlist .modal-playlist--content div:nth-child(3) button:hover {
   transform: scale(1.1);
   background-color: var(--default-green-light);
+}
+
+.annoucements {
+  width: 100%;
+  height: 280px;
+  padding: 10px 10%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.annoucements-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  padding: 15px 0 25px;
+  box-sizing: border-box;
+}
+
+.annoucements-container .annoucements-container--close {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background: #36363666;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: 10px;
+  z-index: 2;
+  font-size: 12px;
+  opacity: 0.3;
+  transition: .1s linear;
+}
+
+.annoucements-container .annoucements-container--close:hover {
+  opacity: 1;
+}
+
+.annoucements .annoucements-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(35px);
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.annoucements-container--thumbnail,
+.annoucements-container--info {
+  z-index: 1;
+}
+
+.annoucements-container--thumbnail {
+  background-color: green;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.annoucements-container--info {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 3fr 1fr;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.annoucements-container--info .title {
+  width: 100%;
+}
+
+.annoucements-container--info .title p,
+.annoucements-container--info .title h1 {
+  margin: 0;
+}
+
+.annoucements-container--info .title p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: var(--light-grey);
+}
+
+.annoucements-container--info .title span {
+  font-size: 11px;
+  color: var(--light-grey);
+}
+
+.annoucements-container--info .actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.annoucements-container--info .actions .actions--button {
+  text-transform: uppercase;
+  border: 1px solid var(--white);
+  margin-right: 10px;
+  /* opacity: .8; */
+  color: var(--white);
+  font-weight: bold;
+  outline: none;
+}
+
+.annoucements-container--info .actions .actions--button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.annoucements-container--info .actions .actions--button.play,
+.annoucements-container--info .actions .actions--button.follow {
+  padding: 7px 35px;
+  border-radius: 50px;
+}
+
+.annoucements-container--info .actions .actions--button.play {
+  background-color: var(--default-green);
+  border-color: transparent;
+}
+
+.annoucements-container--info .actions .actions--button.follow {
+  background-color: var(--grey);
+}
+
+.annoucements-container--info .actions .actions--button.menu {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--grey);
+  position: relative;
+}
+
+.annoucements-container--info .actions .actions--button.menu > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  letter-spacing: 1px;
+}
+
+.annoucements--menu {
+  position: absolute;
+  bottom: -150px;
+  right: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--soft-grey-2);
+  z-index: 1;
+  box-shadow: 1px 1px 10px 2px var(--darkest-grey);
 }
