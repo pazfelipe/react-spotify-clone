@@ -1117,6 +1117,8 @@ body {
 
 .login::before {
   background-image: url('/images/spotify.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .login::after {
