@@ -73,7 +73,9 @@ export default class Searchbar extends Component {
                 </li>
               <li className="modal-user">Account</li>
               <li className="modal-user">Settings</li>
-              <li className="modal-user" onClick={ () => alert( 'I think you shouldn\'t do that' ) }>Log out</li>
+              <li className="modal-user" onClick={ () => alert( 'I think you shouldn\'t do that' ) }>
+                <NavLink to="/signin">Log out</NavLink>
+              </li>
             </ul>
           </div>
         </div>

@@ -4,6 +4,7 @@ import App from './pages/App'
 import Browse from './pages/Browse'
 import Radio from './pages/Radio'
 import Profile from './pages/Profile'
+import Login from './pages/Login'
 
 export default function () {
   return <BrowserRouter>
@@ -12,6 +13,7 @@ export default function () {
       <Route component={Browse} path="/browse"  />
       <Route component={Radio} path="/radio"  />
       <Route component={Profile} path="/profile"  />
+      <Route component={Login} path="/signin"  />
     </Switch>
   </BrowserRouter>
 }
