@@ -1165,6 +1165,7 @@ body {
   color: var(--soft-grey);
   margin: 15px 0;
   box-sizing: border-box;
+  letter-spacing: 1px;
 }
 
 .login__container .form button.form__btn-login:hover {
@@ -1208,6 +1209,7 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   opacity: 0.8;
+  letter-spacing: 1px;
 }
 
 .login__container .form button.form__btn-login--facebook:hover {
