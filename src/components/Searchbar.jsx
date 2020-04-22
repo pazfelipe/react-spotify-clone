@@ -46,7 +46,7 @@ export default class Searchbar extends Component {
                 style={ { position: 'relative' } }>
                 {
                   this.state.private
-                    ? <span className="lock"><i class="las la-lock"></i></span>
+                    ? <span className="lock"><i className="las la-lock"></i></span>
                     : null
                 }
                 <i className="lar la-user-circle"></i>
