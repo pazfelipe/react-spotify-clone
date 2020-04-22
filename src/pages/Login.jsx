@@ -28,7 +28,7 @@ export default function Sigin () {
           </div>
           <div className="container-input">
             <label className="container-input__icon" onClick={ () => setIsPwd( !isPwd ) }>
-              <i className={ `lar la-${ isPwd ? 'eye' : 'eye-slash' }` }></i>
+              <i className={ `lar la-${ isPwd ? 'eye-slash' : 'eye' }` }></i>
             </label>
             <input
               type={ isPwd ? 'password' : 'text' }
