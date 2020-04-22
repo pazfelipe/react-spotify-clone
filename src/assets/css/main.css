@@ -500,13 +500,27 @@ body {
 .searchbar .searchbar--user div:nth-child(1) a {
   text-decoration: none;
   color: var(--white);
+  padding-bottom: 5px;
+}
+
+.searchbar .searchbar--user div:nth-child(1) a span:nth-child(2) {
+  padding-bottom: 5px;
+  padding-top: 7px;
+}
+
+.searchbar .searchbar--user div:nth-child(1) a span:nth-child(2):hover  {
+  border-bottom-color: var(--white);
+}
+
+.searchbar .searchbar--user div:nth-child(1) a span:nth-child(2):active  {
+  border-bottom-color: var(--grey-white);
 }
 
 .searchbar .searchbar--user span:nth-child(2) {
   border-bottom: 1px solid transparent;
 }
 
-.searchbar .searchbar--user span:nth-child(2):hover {
+.searchbar .searchbar--user span:nth-child(1):hover {
   border-bottom-color: var(--white);
 }
 
@@ -526,7 +540,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -5px;
+  bottom: -10px;
   right: -5px;
   background: var(--blue-1);
   color: var(--white);
@@ -1089,7 +1103,8 @@ body {
   height: 100vh;
 }
 
-.login a { /* - TODO - must be removed later */
+.login a {
+  /* - TODO - must be removed later */
   text-decoration: none;
   color: var(--white);
   background-color: var(--default-green-light);
