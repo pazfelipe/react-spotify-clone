@@ -213,26 +213,27 @@ li.separator {
 }
 
 .container-toggle
-  .container-toggle__toggle
-  input[type='checkbox']:hover
-  + span::before {
+.container-toggle__toggle
+input[type='checkbox']:hover
++ span::before {
   background-color: var(--grey-white-2);
 }
 
 .container-toggle
-  .container-toggle__toggle
-  input[type='checkbox']:checked
-  + span {
+.container-toggle__toggle
+input[type='checkbox']:checked
++ span {
   background-color: var(--default-green-light);
   border-color: var(--default-green-light);
 }
 
 .container-toggle
-  .container-toggle__toggle
-  input[type='checkbox']:checked
-  + span::before {
+.container-toggle__toggle
+input[type='checkbox']:checked
++ span::before {
   left: calc(100% - 20px);
   background-color: var(--white);
+  box-shadow: 1px 1px 5px 1px var(--soft-grey-2);
 }
 
 .bg-default-green-light {
